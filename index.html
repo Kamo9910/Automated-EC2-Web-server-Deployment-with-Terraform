@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Terraform with AWS</title>
+</head>
+<body>
+        <div class="centered-text">
+
+        <h1>Automated EC2 Web Server Deployment Using Terraform</h1>
+        
+        <img class="myImage" src="Add a heading (5).gif" alt="Terraform" style="transition: transform 0.3s ease;" height="50%" width="50%">
+        
+        <h2>Project Overview:</h2>
+        <p>In this project, I used Terraform to Provision an Amazon EC2 instnace and automatically configure it as a web server runing Nginx. The infrastructure and configuration were fully automated using infrastructure as Code (Iac)principles. </p>
+        <h3>Architecture Overview</h3>
+        <p>- infrastructure as Code (Iac)<br>
+           - Automate server configuration <br>
+           - Use Terraform provisioners (remote-exec and local-exec) <br>
+           - Secure SSH access using key pairs <br>
+           - Automated software installation <br>
+           - Basic DevOps automation practices </p>
+
+         <h3>Technologies Used</h3>
+         <p>- AWS EC2 <br>
+            - Terraform <br>
+            - Nginx <br>
+            - SSh <br>
+            -Amazon Linux</p>
+         <h3>Steps taken to complets this project :</h3>
+            <h4>1. Defined AWS infrastructure with Terraform</h4>
+            <img class="myImage" src="Screenshot (1).png" alt="Terraform" style="transition: transform 0.3s ease;" height="50%" width="50%">
+             <br>
+            <img class="myImage" src="Screenshot (2).png" alt="Terraform" style="transition: transform 0.3s ease;" height="50%" width="50%">
+             <br>
+            <img class="myImage" src="Screenshot (3).png" alt="Terraform" style="transition: transform 0.3s ease;" height="50%" width="50%">
+            <br>
+            <img class="myImage" src="Screenshot (4).png" alt="Terraform" style="transition: transform 0.3s ease;" height="50%" width="50%">
+            <br>
+            <img class="myImage" src="Screenshot (5).png" alt="Terraform" style="transition: transform 0.3s ease;" height="50%" width="50%">
+            <p>- Configured the AWS provider <br>
+               - Defined an EC2 instance resource <br>
+               - Attached a security group allowing: Port 22(SSH) and Port 80(HTTP)</p>
+            <br>
+            <h4>2. Created and Used an SSH key pair</h4>
+            <img class="myImage" src="Screenshot (6).png" alt="Terraform" style="transition: transform 0.3s ease;" height="50%" width="50%">
+            <p>- Referenced an existing SSH key pair  <br>
+               - Associated the key pair with the EC2 instance <br>
+               - Used the private key for secure remote access </p>
+            <br>
+            <h4>3. Installed and Configured Nginx</h4>
+            <img class="myImage" src="Screenshot (7).png" alt="Terraform" style="transition: transform 0.3s ease;" height="50%" width="50%">
+            <br>
+            <img class="myImage" src="Screenshot (8).png" alt="Terraform" style="transition: transform 0.3s ease;" height="50%" width="50%">
+            <br>
+            <img class="myImage" src="Screenshot (9).png" alt="Terraform" style="transition: transform 0.3s ease;" height="50%" width="50%">
+            <p>Used the remote-exec provisioner to: <br>
+               - Connect to the EC2 instance via SSH. <br>
+               - Update the system packages.<br>
+               - Install Nginx<br>
+               - Start and enabled the Nginx service</p>
+            <p>This ensured the web server was configured immediately after provisioning </p>
+            <br>
+            <h4>4. Executed Local Commands Using local-exec</h4>
+            <img class="myImage" src="Screenshot (9).png" alt="Terraform" style="transition: transform 0.3s ease;" height="50%" width="50%">
+            <br>
+            <img class="myImage" src="Screenshot (10).png" alt="Terraform" style="transition: transform 0.3s ease;" height="50%" width="50%">
+            <p>Used the local-exec provisioner to:<br>
+              - Output the public IP address. <br>
+              - Display deployment confirmation messages. <br>
+              - Assist with post deployment verification. </p>
+              
+
+            <h4>5.Verified Deployment</h4>
+            <img class="myImage" src="Screenshot (11).png" alt="Amazon EC2" style="transition: transform 0.3s ease;" height="50%" width="50%">
+            <br>
+            <img class="myImage" src="Screenshot (12).png" alt="Nginx" style="transition: transform 0.3s ease;" height="50%" width="50%">
+            <br>
+            <img class="myImage" src="Screenshot (13).png" alt="Nginx" style="transition: transform 0.3s ease;" height="50%" width="50%">
+            <br>
+            <img class="myImage" src="Screenshot (14).png" alt="Nginx" style="transition: transform 0.3s ease;" height="50%" width="50%">
+            <p>- Accessed the EC2 public_IP address in browser. <br>
+               - Confirmed that the Nginx default page was displayed <br>
+               - Verified successful automation from provisioning to application setup</p>
+
+            <h4>6. Destroyed AWS Resources Using Terraform</h4>
+            <img class="myImage" src="Screenshot (15).png" alt="Terraform" style="transition: transform 0.3s ease;" height="50%" width="50%">
+            <br>
+            <img class="myImage" src="Screenshot (16).png" alt="Terraform" style="transition: transform 0.3s ease;" height="50%" width="50%">
+            <br>
+            <img class="myImage" src="Screenshot (17).png" alt="Terraform" style="transition: transform 0.3s ease;" height="50%" width="50%">
+            <p>- Executed terraform destroy
+               - Used local-exec provisioner to display destroy confirmation message <br>
+               Terraform: <br>
+               - Terminated the EC2 instance  <br>
+               - Removed the security group <br>
+               - Cleaned up all associated resources</p>
+            
+            </div>
+
+        <script src="javascript.js" charset="utf-8" ></script>
+
+</body>
+</html>
